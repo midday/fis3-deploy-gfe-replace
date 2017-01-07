@@ -30,7 +30,7 @@ module.exports = function(options, modified, total, next) {
             });
 
 
-            file.setContent(result);
+            file.setContent(content);
         }
     });
     next();
