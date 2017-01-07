@@ -1,0 +1,24 @@
+{
+  "name": "fis3-deploy-gfe-replace",
+  "version": "1.0.0",
+  "description": "本插件将会根据配置替换字符串",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midday/fis3-deploy-gfe-replace.git"
+  },
+  "keywords": [
+    "gfe",
+    "fis3",
+    "replace"
+  ],
+  "author": "midday",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/midday/fis3-deploy-gfe-replace/issues"
+  },
+  "homepage": "https://github.com/midday/fis3-deploy-gfe-replace#readme"
+}

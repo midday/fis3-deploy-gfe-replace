@@ -1,2 +1,31 @@
 # fis3-deploy-gfe-replace
 fis3-deploy-gfe-replace
+
+
+## INSTALL
+
+```bash
+npm install [-g] fis3-deploy-replace
+```
+
+## USE
+
+```js
+fis.match('**', {
+    deploy: [
+        fis.plugin('gfe-replace', {
+	        patterns: [
+	            {
+	                match: '__JS_DOMAIN__',
+	                replacement:'//js.atguat.com'
+	            },
+	            {
+	                match: '__CSS_DOMAIN__',
+	                replacement:'//css.atguat.com'
+	            }
+	        ]
+    	}),
+        fis.plugin('local-deliver') //must add a deliver, such as http-push, local-deliver
+    ]
+});
+```
