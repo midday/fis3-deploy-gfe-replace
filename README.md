@@ -5,7 +5,7 @@ fis3-deploy-gfe-replace
 ## INSTALL
 
 ```bash
-npm install [-g] fis3-deploy-replace
+npm install [-g] fis3-deploy-gfe-replace
 ```
 
 ## USE

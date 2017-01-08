@@ -1,6 +1,6 @@
 {
     "name": "fis3-deploy-gfe-replace",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "本插件将会根据配置替换字符串",
     "main": "index.js",
     "repository": {
