@@ -17,11 +17,11 @@ fis.match('**', {
 	        patterns: [
 	            {
 	                match: '__JS_DOMAIN__',
-	                replacement:'//js.atguat.com'
+	                replacement:'//js.atguat.net.cn'
 	            },
 	            {
 	                match: '__CSS_DOMAIN__',
-	                replacement:'//css.atguat.com'
+	                replacement:'//css.atguat.net.cn'
 	            }
 	        ]
     	}),

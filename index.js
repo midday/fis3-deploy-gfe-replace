@@ -10,28 +10,30 @@
  */
 module.exports = function(options, modified, total, next) {
     var patterns = options.patterns;
-    modified.forEach(function(file) {
-        if (file.isText() || typeof(file.getContent()) === 'string') {
-            var content = file.getContent();
+    if (patterns) {
+        modified.forEach(function(file) {
+            if (file.isText() || typeof(file.getContent()) === 'string') {
+                var content = file.getContent();
 
-            patterns.forEach(function(pattern) {
-                if (fis.util.is(pattern.match, 'String')) {
-                    pattern.match = new RegExp(fis.util.escapeReg(pattern.match), 'g');
-                }
-                if (!fis.util.is(pattern.match, 'RegExp')) {
-                    fis.log.error('fis3-deploy-gfe-replace: match must a string or RegExp.');
-                }
+                patterns.forEach(function(pattern) {
+                    if (fis.util.is(pattern.match, 'String')) {
+                        pattern.match = new RegExp(fis.util.escapeReg(pattern.match), 'g');
+                    }
+                    if (!fis.util.is(pattern.match, 'RegExp')) {
+                        fis.log.error('fis3-deploy-gfe-replace: match must a string or RegExp.');
+                    }
 
-                var result = content.replace(pattern.match, pattern.replacement);
-                if (result !== content) {
-                    content = result;
-                    fis.log.debug('Replace from %s to %s in file [%s]', pattern.match, pattern.replacement, file);
-                }
-            });
+                    var result = content.replace(pattern.match, pattern.replacement);
+                    if (result !== content) {
+                        content = result;
+                        fis.log.debug('Replace from %s to %s in file [%s]', pattern.match, pattern.replacement, file);
+                    }
+                });
 
-
-            file.setContent(content);
-        }
-    });
+                file.setContent(content);
+            }
+        });
+    }
+    
     next();
 };
